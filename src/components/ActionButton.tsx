@@ -1,5 +1,6 @@
 import React from 'react';
 import { Pressable, StyleSheet, Text } from 'react-native';
+import { theme } from '../styles/theme';
 
 type ActionButtonProps = {
   label: string;
@@ -16,18 +17,18 @@ export const ActionButton = ({ label, onPress }: ActionButtonProps) => {
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: '#EDF3FF',
-    borderRadius: 14,
-    height: 54,
+    backgroundColor: theme.colors.white,
+    borderRadius: theme.radius.md,
+    height: 56,
     justifyContent: 'center',
     alignItems: 'center',
-    marginBottom: 10,
+    marginBottom: theme.spacing.sm,
     borderWidth: 1,
-    borderColor: '#D7E4FF'
+    borderColor: theme.colors.borderSoft
   },
   label: {
-    color: '#0E1828',
-    fontSize: 15,
-    fontWeight: '600'
+    color: theme.colors.textPrimary,
+    fontSize: 18,
+    fontWeight: '700'
   }
 });

@@ -3,6 +3,7 @@ import React, { useMemo, useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
 import { useAppContext } from '../context/AppContext';
 import { RootTabParamList } from '../navigation/types';
+import { theme } from '../styles/theme';
 
 type Props = BottomTabScreenProps<RootTabParamList, 'RepairFlow'>;
 
@@ -25,6 +26,7 @@ export const RepairFlowScreen = ({}: Props) => {
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
+      <Text style={styles.title}>{device.repairFlow.title}</Text>
       {!hasSubmissions && <Text style={styles.emptyText}>{device.repairFlow.emptyTitle}</Text>}
 
       <View style={styles.formCard}>
@@ -32,7 +34,7 @@ export const RepairFlowScreen = ({}: Props) => {
         <TextInput
           style={styles.input}
           placeholder={device.repairFlow.intakePlaceholder}
-          placeholderTextColor="#7B879A"
+          placeholderTextColor={theme.colors.textSubtle}
           value={intake}
           onChangeText={setIntake}
         />
@@ -41,7 +43,7 @@ export const RepairFlowScreen = ({}: Props) => {
         <TextInput
           style={[styles.input, styles.multilineInput]}
           placeholder={device.repairFlow.symptomsPlaceholder}
-          placeholderTextColor="#7B879A"
+          placeholderTextColor={theme.colors.textSubtle}
           value={symptoms}
           onChangeText={setSymptoms}
           multiline
@@ -58,54 +60,59 @@ export const RepairFlowScreen = ({}: Props) => {
 const styles = StyleSheet.create({
   container: {
     flexGrow: 1,
-    backgroundColor: '#F5F8FF',
-    padding: 20
+    backgroundColor: theme.colors.background,
+    padding: theme.spacing.lg
+  },
+  title: {
+    fontSize: 32,
+    color: theme.colors.textPrimary,
+    fontWeight: '800',
+    marginBottom: theme.spacing.sm
   },
   emptyText: {
-    color: '#0E1828',
-    fontSize: 20,
-    fontWeight: '700',
-    marginBottom: 20
+    color: theme.colors.textMuted,
+    fontSize: 16,
+    fontWeight: '500',
+    marginBottom: theme.spacing.md
   },
   formCard: {
-    backgroundColor: '#FFFFFF',
-    borderRadius: 20,
-    padding: 18,
+    backgroundColor: theme.colors.white,
+    borderRadius: theme.radius.xl,
+    padding: theme.spacing.lg,
     borderWidth: 1,
-    borderColor: '#DFE7F7'
+    borderColor: theme.colors.borderSoft
   },
   label: {
-    fontSize: 13,
+    fontSize: 14,
     fontWeight: '600',
-    color: '#41516D',
-    marginBottom: 6
+    color: theme.colors.textMuted,
+    marginBottom: theme.spacing.xs
   },
   input: {
     borderWidth: 1,
-    borderColor: '#CAD7EE',
-    borderRadius: 12,
-    paddingHorizontal: 14,
-    paddingVertical: 12,
-    marginBottom: 14,
+    borderColor: theme.colors.borderInput,
+    borderRadius: theme.radius.md,
+    padding: theme.spacing.md,
+    marginBottom: theme.spacing.md,
     fontSize: 15,
-    color: '#0E1828',
-    backgroundColor: '#F8FAFF'
+    color: theme.colors.textPrimary,
+    backgroundColor: theme.colors.white
   },
   multilineInput: {
-    minHeight: 110,
+    minHeight: 120,
     textAlignVertical: 'top'
   },
   submitButton: {
-    marginTop: 4,
-    backgroundColor: '#0E1828',
-    borderRadius: 12,
+    marginTop: theme.spacing.xs,
+    backgroundColor: theme.colors.navy,
+    borderRadius: theme.radius.md,
     alignItems: 'center',
     justifyContent: 'center',
-    height: 50
+    height: 56
   },
   submitLabel: {
-    color: '#FFFFFF',
+    color: theme.colors.white,
     fontWeight: '700',
-    fontSize: 16
+    fontSize: 18
   }
 });

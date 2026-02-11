@@ -2,13 +2,13 @@
   {
     "id": "mnt-001",
     "date": "2025-01-19",
-    "center": "PATOZ Service Seoul",
-    "summary": "Filter replacement"
+    "center": "PATOZ 모빌리티 강남 센터",
+    "summary": "브레이크 패드 교체 및 제동 점검"
   },
   {
     "id": "mnt-002",
     "date": "2025-04-02",
-    "center": "PATOZ Service Busan",
-    "summary": "Motor inspection"
+    "center": "PATOZ 모빌리티 해운대 센터",
+    "summary": "구동 모터 정밀 진단"
   }
 ]

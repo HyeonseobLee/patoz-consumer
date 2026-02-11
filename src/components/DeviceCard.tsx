@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { theme } from '../styles/theme';
 
 type DeviceCardProps = {
   name: string;
@@ -27,29 +28,29 @@ export const DeviceCard = ({ name, serialLabel, serialNumber, registeredYearLabe
 
 const styles = StyleSheet.create({
   card: {
-    backgroundColor: '#0E1828',
-    borderRadius: 20,
-    paddingVertical: 24,
-    paddingHorizontal: 20,
-    marginBottom: 20
+    backgroundColor: theme.colors.navy,
+    borderRadius: theme.radius.xl,
+    paddingVertical: theme.spacing.lg,
+    paddingHorizontal: theme.spacing.lg,
+    marginBottom: theme.spacing.xl
   },
   name: {
-    color: '#FFFFFF',
-    fontSize: 22,
+    color: theme.colors.white,
+    fontSize: 28,
     fontWeight: '700',
-    marginBottom: 18
+    marginBottom: theme.spacing.md
   },
   row: {
-    marginBottom: 10
+    marginBottom: theme.spacing.sm
   },
   metaLabel: {
-    color: '#AFC3E8',
+    color: '#BFCCE4',
     fontSize: 12,
     marginBottom: 2
   },
   metaValue: {
-    color: '#FFFFFF',
-    fontSize: 16,
+    color: theme.colors.white,
+    fontSize: 18,
     fontWeight: '600'
   }
 });

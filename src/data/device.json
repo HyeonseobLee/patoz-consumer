@@ -1,43 +1,43 @@
 {
-  "name": "PATOZ Air Purifier X1",
+  "name": "EZ-BIKE S1",
   "serialLabel": "Serial Number",
-  "serialNumber": "PTZ-X1-2409-9912",
+  "serialNumber": "ST12345678",
   "registeredYearLabel": "Registered Year",
   "registeredYear": "2024",
   "actions": [
     {
       "id": "repair",
-      "label": "Repair Inquiry"
+      "label": "정비 진단"
     },
     {
       "id": "history",
-      "label": "Maintenance History"
+      "label": "정비 이력"
     },
     {
       "id": "theft",
-      "label": "Report Theft"
+      "label": "도난 신고"
     },
     {
       "id": "safety",
-      "label": "Safety Guide"
+      "label": "안전 가이드"
     }
   ],
   "tabs": {
     "home": "Home",
-    "repair": "Repair Flow",
-    "history": "Maintenance History"
+    "repair": "Repair",
+    "history": "History"
   },
   "repairFlow": {
-    "title": "Repair Flow",
-    "emptyTitle": "No inquiry yet",
-    "intakeLabel": "Intake",
-    "intakePlaceholder": "Describe intake",
-    "symptomsLabel": "Symptoms",
-    "symptomsPlaceholder": "Describe symptoms",
-    "submitLabel": "Submit"
+    "title": "정비 접수",
+    "emptyTitle": "정비 요청 정보를 입력해 주세요",
+    "intakeLabel": "접수 내용",
+    "intakePlaceholder": "예: 배터리 충전 속도 저하",
+    "symptomsLabel": "증상 상세",
+    "symptomsPlaceholder": "주행 중 발생한 증상을 자세히 작성해 주세요",
+    "submitLabel": "정비 접수하기"
   },
   "maintenance": {
-    "title": "Maintenance History",
-    "emptyTitle": "No records"
+    "title": "정비 이력",
+    "emptyTitle": "아직 정비 이력이 없습니다"
   }
 }

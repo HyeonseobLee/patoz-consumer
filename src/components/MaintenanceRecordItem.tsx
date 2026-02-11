@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { theme } from '../styles/theme';
 
 type MaintenanceRecordItemProps = {
   date: string;
@@ -19,26 +20,25 @@ export const MaintenanceRecordItem = ({ date, center, summary }: MaintenanceReco
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#FFFFFF',
-    borderRadius: 16,
-    padding: 16,
-    marginBottom: 12,
-    borderWidth: 1,
-    borderColor: '#E4EAF5'
+    backgroundColor: theme.colors.white,
+    borderRadius: 20,
+    padding: theme.spacing.lg,
+    marginVertical: 10
   },
   date: {
     fontSize: 12,
-    color: '#56647D',
-    marginBottom: 6
+    color: theme.colors.textSubtle,
+    marginBottom: theme.spacing.xs
   },
   summary: {
-    fontSize: 17,
+    fontSize: 21,
     fontWeight: '700',
-    color: '#0E1828',
-    marginBottom: 4
+    color: theme.colors.textPrimary,
+    marginBottom: theme.spacing.xs
   },
   center: {
-    fontSize: 14,
-    color: '#2D3E57'
+    fontSize: 15,
+    color: theme.colors.textMuted,
+    fontWeight: '500'
   }
 });
