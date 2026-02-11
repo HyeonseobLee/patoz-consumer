@@ -1,3 +1,4 @@
+import { Ionicons } from '@expo/vector-icons';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -6,34 +7,42 @@ import { useAppContext } from '../context/AppContext';
 import { HomeScreen } from '../screens/HomeScreen';
 import { MaintenanceHistoryScreen } from '../screens/MaintenanceHistoryScreen';
 import { RepairFlowScreen } from '../screens/RepairFlowScreen';
+import { theme } from '../styles/theme';
 import { RootStackParamList, RootTabParamList } from './types';
 
 const Tab = createBottomTabNavigator<RootTabParamList>();
 const Stack = createNativeStackNavigator<RootStackParamList>();
+
+const tabIcons: Record<keyof RootTabParamList, keyof typeof Ionicons.glyphMap> = {
+  Home: 'home-outline',
+  RepairFlow: 'construct-outline',
+  MaintenanceHistory: 'document-text-outline'
+};
 
 const TabsNavigator = () => {
   const { device } = useAppContext();
 
   return (
     <Tab.Navigator
-      screenOptions={{
-        headerStyle: { backgroundColor: '#F5F8FF' },
+      screenOptions={({ route }) => ({
+        headerStyle: { backgroundColor: theme.colors.background },
         headerShadowVisible: false,
-        headerTitleStyle: { color: '#0E1828', fontWeight: '700', fontSize: 20 },
+        headerTitleStyle: { color: theme.colors.textPrimary, fontWeight: '700', fontSize: 20 },
         tabBarStyle: {
           height: 74,
-          paddingTop: 8,
-          paddingBottom: 12,
-          backgroundColor: '#FFFFFF',
-          borderTopColor: '#E7EDF8'
+          paddingTop: theme.spacing.xs,
+          paddingBottom: theme.spacing.sm,
+          backgroundColor: theme.colors.white,
+          borderTopColor: theme.colors.borderSoft
         },
         tabBarLabelStyle: {
           fontSize: 12,
           fontWeight: '600'
         },
-        tabBarActiveTintColor: '#0E1828',
-        tabBarInactiveTintColor: '#7E8AA0'
-      }}
+        tabBarActiveTintColor: theme.colors.brand,
+        tabBarInactiveTintColor: theme.colors.textSubtle,
+        tabBarIcon: ({ color, size }) => <Ionicons name={tabIcons[route.name]} size={size} color={color} />
+      })}
     >
       <Tab.Screen name="Home" component={HomeScreen} options={{ title: device.tabs.home, tabBarLabel: device.tabs.home }} />
       <Tab.Screen

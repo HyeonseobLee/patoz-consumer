@@ -4,6 +4,7 @@ import { FlatList, StyleSheet, Text, View } from 'react-native';
 import { MaintenanceRecordItem } from '../components/MaintenanceRecordItem';
 import { useAppContext } from '../context/AppContext';
 import { RootTabParamList } from '../navigation/types';
+import { theme } from '../styles/theme';
 
 type Props = BottomTabScreenProps<RootTabParamList, 'MaintenanceHistory'>;
 
@@ -32,20 +33,20 @@ export const MaintenanceHistoryScreen = ({}: Props) => {
 
 const styles = StyleSheet.create({
   listContainer: {
-    paddingHorizontal: 20,
-    paddingTop: 20,
+    paddingHorizontal: theme.spacing.lg,
+    paddingTop: theme.spacing.lg,
     paddingBottom: 28,
-    backgroundColor: '#F5F8FF'
+    backgroundColor: theme.colors.background
   },
   emptyContainer: {
     flex: 1,
-    backgroundColor: '#F5F8FF',
+    backgroundColor: theme.colors.background,
     alignItems: 'center',
     justifyContent: 'center'
   },
   emptyText: {
     fontSize: 20,
     fontWeight: '700',
-    color: '#0E1828'
+    color: theme.colors.textPrimary
   }
 });
