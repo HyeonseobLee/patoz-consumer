@@ -1,0 +1,43 @@
+{
+  "name": "PATOZ Air Purifier X1",
+  "serialLabel": "Serial Number",
+  "serialNumber": "PTZ-X1-2409-9912",
+  "registeredYearLabel": "Registered Year",
+  "registeredYear": "2024",
+  "actions": [
+    {
+      "id": "repair",
+      "label": "Repair Inquiry"
+    },
+    {
+      "id": "history",
+      "label": "Maintenance History"
+    },
+    {
+      "id": "theft",
+      "label": "Report Theft"
+    },
+    {
+      "id": "safety",
+      "label": "Safety Guide"
+    }
+  ],
+  "tabs": {
+    "home": "Home",
+    "repair": "Repair Flow",
+    "history": "Maintenance History"
+  },
+  "repairFlow": {
+    "title": "Repair Flow",
+    "emptyTitle": "No inquiry yet",
+    "intakeLabel": "Intake",
+    "intakePlaceholder": "Describe intake",
+    "symptomsLabel": "Symptoms",
+    "symptomsPlaceholder": "Describe symptoms",
+    "submitLabel": "Submit"
+  },
+  "maintenance": {
+    "title": "Maintenance History",
+    "emptyTitle": "No records"
+  }
+}
